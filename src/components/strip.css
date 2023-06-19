@@ -1,0 +1,31 @@
+.strip-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  gap: 5px;
+  width: 250px;
+}
+
+.stripbar-container {
+  position: relative;
+}
+
+.strip-variable-bar {
+  position: absolute;
+  background-color: rgb(229, 1, 112);
+  width: 30%;
+  height: 3px;
+  border-radius: 5px;
+}
+
+.strip-bar-fixed {
+  background-color: rgb(202, 201, 201);
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+}
+
+.strip-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
