@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Storage from "./components/storage.component";
+import "./App.css";
+import Card from "./components/card.component";
+import RAM from "./components/ram.component";
+import Datetime from "./components/datetime.component";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dataValues = {
+    CPU: {
+      stripValues: [
+        {
+          title: "Temperature",
+          value: 40,
+          maxValue: 100,
+          unitMeasure: " °C",
+          id: "temperature" + "CPU" + "strip",
+        },
+        {
+          title: "Clock rate",
+          value: 3600,
+          maxValue: 5200,
+          unitMeasure: " MHz",
+          id: "clockrate" + "CPU" + "strip",
+        },
+      ],
+      componentName: "Intel Core i5 13600K",
+    },
+    GPU: {
+      stripValues: [
+        {
+          title: "Temperature",
+          value: 37,
+          maxValue: 100,
+          unitMeasure: " °C",
+          id: "temperature" + "GPU" + "strip",
+        },
+        {
+          title: "Clock rate",
+          value: 210,
+          maxValue: 2850,
+          unitMeasure: " MHz",
+          id: "clockrate" + "GPU" + "strip",
+        },
+      ],
+      componentName: "NVIDIA GeForce RTX 4070",
+    },
+    RAM: {
+      currStorage: 194,
+      totalStorage: 930,
+    },
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <Datetime />
+      <div className="app-content-wrapper">
+        <Card title="CPU" dataValues={dataValues.CPU} />
+        <Card title="GPU" dataValues={dataValues.GPU} />
+        <div className="ram-storage-container box-container">
+          <div className="ram-storage-content">
+            <RAM />
+            <Storage />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
