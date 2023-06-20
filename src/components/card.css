@@ -1,8 +1,15 @@
 .card-component-wrapper {
-  background-color: white;
-  border: 1px solid #89898989;
+  border-bottom: 1px solid #a7a7a789;
   border-radius: 2px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-title-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .circle-strip-wrapper {

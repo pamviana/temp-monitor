@@ -11,7 +11,7 @@ export default function Strip({ values }) {
       </div>
       <div className="strip-text-wrapper">
         <p>{values.title}</p>
-        <p>{values.value}</p>
+        <p>{values.value + values.unitMeasure}</p>
       </div>
     </div>
   );
