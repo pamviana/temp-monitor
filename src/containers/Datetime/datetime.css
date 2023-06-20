@@ -1,9 +1,9 @@
-.datetime-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgb(241,245,247);
-    padding: 20px;
+.datetime-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(241, 245, 247);
+  padding: 20px;
 }

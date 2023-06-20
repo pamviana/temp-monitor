@@ -16,7 +16,7 @@ function App() {
       <div className="app-content-wrapper">
         <Card title="CPU" dataValues={dataValues.CPU} />
         <Card title="GPU" dataValues={dataValues.GPU} />
-        <div className="ram-storage-container box-container">
+        <div className="ram-storage-container box-container app-file">
           <div className="ram-storage-content">
             <RAM data={RAMdata}/>
             <Storage data={storageData}/>

@@ -8,10 +8,10 @@ export default function Card({ title, dataValues }) {
   const percentageValue = getPercentage(dataValues.load.currVal,dataValues.load.total);
 
   return (
-    <div className="card-component-wrapper box-container">
+    <div className="card-component-wrapper box-container card-component">
       <div className="card-title-wrapper">
         <p>{title}</p>
-        <p style={{ fontSize: "18px" }}>{dataValues.componentName}</p>
+        <p id="component-name">{dataValues.componentName}</p>
       </div>
 
       <div className="circle-strip-wrapper">
