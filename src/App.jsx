@@ -2,53 +2,13 @@ import Storage from "./components/storage.component";
 import "./App.css";
 import Card from "./components/card.component";
 import RAM from "./components/ram.component";
-import Datetime from "./components/datetime.component";
+import Datetime from "./containers/Datetime/datetime.container";
+import { getData, getRAMdata, getStorageData } from "./services/api";
 
 function App() {
-  const dataValues = {
-    CPU: {
-      stripValues: [
-        {
-          title: "Temperature",
-          value: 40,
-          maxValue: 100,
-          unitMeasure: " °C",
-          id: "temperature" + "CPU" + "strip",
-        },
-        {
-          title: "Clock rate",
-          value: 3600,
-          maxValue: 5200,
-          unitMeasure: " MHz",
-          id: "clockrate" + "CPU" + "strip",
-        },
-      ],
-      componentName: "Intel Core i5 13600K",
-    },
-    GPU: {
-      stripValues: [
-        {
-          title: "Temperature",
-          value: 37,
-          maxValue: 100,
-          unitMeasure: " °C",
-          id: "temperature" + "GPU" + "strip",
-        },
-        {
-          title: "Clock rate",
-          value: 210,
-          maxValue: 2850,
-          unitMeasure: " MHz",
-          id: "clockrate" + "GPU" + "strip",
-        },
-      ],
-      componentName: "NVIDIA GeForce RTX 4070",
-    },
-    RAM: {
-      currStorage: 194,
-      totalStorage: 930,
-    },
-  };
+  const dataValues = getData();
+  const RAMdata = getRAMdata();
+  const storageData = getStorageData();
 
   return (
     <div className="app">
@@ -58,8 +18,8 @@ function App() {
         <Card title="GPU" dataValues={dataValues.GPU} />
         <div className="ram-storage-container box-container">
           <div className="ram-storage-content">
-            <RAM />
-            <Storage />
+            <RAM data={RAMdata}/>
+            <Storage data={storageData}/>
           </div>
         </div>
       </div>
