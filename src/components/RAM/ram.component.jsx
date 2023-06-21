@@ -1,5 +1,5 @@
-import { getPercentage } from "../utils/helperFunctions";
-import Circle from "./Circle-Percentage/circle-percentage.component";
+import { getPercentage } from "../../utils/helperFunctions";
+import Circle from "../Circle-Percentage/circle-percentage.component";
 import "./ram.css";
 
 export default function RAM({ data }) {

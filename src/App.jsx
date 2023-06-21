@@ -1,7 +1,7 @@
-import Storage from "./components/storage.component";
+import Storage from "./components/Storage/storage.component";
 import "./App.css";
-import Card from "./components/card.component";
-import RAM from "./components/ram.component";
+import Card from "./components/Card/card.component";
+import RAM from "./components/RAM/ram.component";
 import Datetime from "./containers/Datetime/datetime.container";
 import { getData, getRAMdata, getStorageData } from "./services/api";
 
@@ -9,8 +9,9 @@ function App() {
   const dataValues = getData();
   const RAMdata = getRAMdata();
   const storageData = getStorageData();
-
+  
   return (
+    
     <div className="app">
       <Datetime />
       <div className="app-content-wrapper">

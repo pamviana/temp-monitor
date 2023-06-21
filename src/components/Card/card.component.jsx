@@ -1,7 +1,7 @@
-import Circle from "./Circle-Percentage/circle-percentage.component";
-import BarData from "./Bar-Data/bar-data.component";
+import Circle from "../Circle-Percentage/circle-percentage.component";
+import BarData from "../Bar-Data/bar-data.component";
 import "./card.css";
-import { getPercentage } from "../utils/helperFunctions";
+import { getPercentage } from "../../utils/helperFunctions";
 
 export default function Card({ title, dataValues }) {
 

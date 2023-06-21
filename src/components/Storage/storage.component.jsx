@@ -1,4 +1,4 @@
-import BarData from "./Bar-Data/bar-data.component";
+import BarData from "../Bar-Data/bar-data.component";
 import './storage.css'
 
 export default function Storage({ data }) {
